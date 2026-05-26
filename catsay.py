@@ -8,6 +8,7 @@ FACES = {
     "love": "^.^",
 }
 
+
 def cat_say(text: str = "", mood: str = "happy") -> None:
     """The cat says text with a given mood (happy/sleepy/angry/love)."""
     if mood not in FACES:
@@ -22,6 +23,7 @@ def cat_say(text: str = "", mood: str = "happy") -> None:
    > ^ <"""
     print(cat)
 
+
 def cat_warn(text: str = "") -> None:
     """The cat outputs a warning."""
     cat = rf"""   /\_/\
@@ -29,9 +31,11 @@ def cat_warn(text: str = "") -> None:
    > ^ <"""
     print(cat)
 
+
 def cat_error(text: str = "Error") -> None:
     """The cat outputs an error message."""
     cat_say(f"!!! {text} !!!", mood="angry")
+
 
 def cat_think(text: str = "", mood: str = "happy") -> None:
     """The cat says text thoughtfully."""
@@ -44,10 +48,12 @@ def cat_think(text: str = "", mood: str = "happy") -> None:
    > ^ <"""
     print(cat)
 
+
 def cat_ask(question: str = "") -> str:
     """The cat asks a question and returns the user's answer."""
     cat_say(question, mood="love")
     return input("> ")
+
 
 if __name__ == "__main__":
     print("=== cat_say() ===\n")
