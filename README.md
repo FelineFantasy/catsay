@@ -243,10 +243,8 @@ catsay/
 - No external dependencies
 
 ## 👤 Author
-
-**FelineFantasy**
-
-License: MIT
+- **FelineFantasy**
+- **License**: MIT
 
 ## 🔗 Links
 
