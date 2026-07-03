@@ -230,7 +230,9 @@ cat_ask("Where's my food?")
 ```
 catsay/
 ├── catsay.py      # Main library
-└── README.md      # This file
+├── README.md      # This file
+├── LICENSE        # MIT License
+└── .gitignore     # Git ignore rules
 ```
 
 ## 🛠 Technologies
