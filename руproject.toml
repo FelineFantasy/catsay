@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catsay"
+version = "0.1.0"
+description = "A cute cat that says things in the terminal"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "FelineFantasy", email = "mailsalavata5@gmail.com"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.8"
