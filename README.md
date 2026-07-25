@@ -232,6 +232,7 @@ catsay/
 ├── catsay.py      # Main library
 ├── README.md      # This file
 ├── LICENSE        # MIT License
+├── руproject.toml # On install
 └── .gitignore     # Git ignore rules
 ```
 
