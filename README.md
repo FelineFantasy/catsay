@@ -227,7 +227,7 @@ cat_ask("Where's my food?")
 
 ## 📁 Project Structure
 
-```
+```text
 catsay/
 ├── catsay.py      # Main library
 ├── README.md      # This file
