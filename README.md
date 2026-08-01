@@ -229,11 +229,13 @@ cat_ask("Where's my food?")
 
 ```text
 catsay/
-├── catsay.py      # Main library
-├── README.md      # This file
-├── LICENSE        # MIT License
-├── pyproject.toml # On install
-└── .gitignore     # Git ignore rules
+├── .github/
+│   └── FUNDING.yml           # Support link for DonationAlerts
+├── catsay.py                 # Main library
+├── README.md                 # Documentation
+├── LICENSE                   # MIT License
+├── pyproject.toml            # Package configuration
+└── .gitignore                # Git ignore rules
 ```
 
 ## 🛠 Technologies
