@@ -33,7 +33,7 @@ Just copy `catsay.py` into your project:
 ### Option 2: Install from Git
 
 ```bash
-git clone https://github.com/FelineFantasy/catsay.git
+git clone https://github.com/FelineFantasy/catsay
 cd catsay
 ```
 
