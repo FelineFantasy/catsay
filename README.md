@@ -2,19 +2,6 @@
 
 A cute ASCII cat library that says, warns, thinks, and asks questions. Perfect for making your CLI output more fun and expressive!
 
-## 📋 Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Reference](#api-reference)
-- [Moods](#moods)
-- [Examples](#examples)
-- [Project Structure](#project-structure)
-- [Requirements](#requirements)
-- [Author](#author)
-
 ## 📝 Description
 
 **catsay** is a tiny Python library that renders an ASCII cat with messages. It provides several functions for different use cases:
