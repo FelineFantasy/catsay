@@ -250,7 +250,3 @@ Every little bit is appreciated! ❤️
 ## 👤 Author
 - **FelineFantasy**
 - **License**: MIT
-
----
-
-Made with ❤️ for cat lovers
