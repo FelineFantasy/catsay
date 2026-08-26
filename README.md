@@ -251,15 +251,6 @@ Every little bit is appreciated! ❤️
 - **FelineFantasy**
 - **License**: MIT
 
-## 🔗 Links
-
-- **GitHub**: https://github.com/FelineFantasy/catsay
-- **Other Projects**:
-  - [CatFactsAPI](https://github.com/FelineFantasy/CatFactsAPI) — REST API for cat facts
-  - [Digital Cat](https://github.com/FelineFantasy/Digital_Cat) — Virtual pet game
-  - [ask_input](https://github.com/FelineFantasy/ask_input) — Rust input library
-  - [paw-calculator](https://github.com/FelineFantasy/paw-calculator) — Rust calculator with cat theme
-
 ---
 
 Made with ❤️ for cat lovers
