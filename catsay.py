@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Catsay - ASCII cat with customizable moods and messages
+"""
+
 # catsay.py
 __all__ = ["cat_say", "cat_warn", "cat_error", "cat_think", "cat_ask"]
 
