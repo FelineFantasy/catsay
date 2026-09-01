@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # catsay.py
 __all__ = ["cat_say", "cat_warn", "cat_error", "cat_think", "cat_ask"]
 
