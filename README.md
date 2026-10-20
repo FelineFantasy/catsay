@@ -14,7 +14,7 @@ A cute ASCII cat library that says, warns, thinks, and asks questions. Perfect f
 
 ### Features:
 
-- 🎭 **4 moods** — happy, sleepy,angry,love
+- 🎭 **4 moods** — happy, sleepy, angry, love
 - 📦 **Zero dependencies** — Pure Python, no extra packages
 - 🔌 **Simple API** — 5 functions for all use cases
 - 🎨 **ASCII art** — No external images or assets needed
