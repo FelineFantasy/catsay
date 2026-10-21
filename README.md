@@ -212,16 +212,30 @@ cat_ask()
 cat_ask("Where's my food?")
 ```
 
+## 🧪 Testing
+
+Run the test suite with the standard library `unittest`:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Tests also run automatically on every push and pull request via GitHub Actions.
+
 ## 📁 Project Structure
 
 ```text
 catsay/
 ├── .github/
-│   └── FUNDING.yml           # Support link for DonationAlerts
+│   ├── FUNDING.yml           # Support link for DonationAlerts
+│   └── workflows/
+│       └── tests.yml         # CI workflow for running tests
 ├── catsay.py                 # Main library
 ├── README.md                 # Documentation
 ├── LICENSE                   # MIT License
 ├── pyproject.toml            # Package configuration
+├── tests/
+│   └── test_catsay.py        # Unit tests
 └── .gitignore                # Git ignore rules
 ```
 
