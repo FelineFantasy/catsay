@@ -50,8 +50,9 @@ def cat_error(text: str = "Error") -> None:
 def cat_think(text: str = "", mood: str = "happy") -> None:
     """The cat says text thoughtfully."""
     face = _get_face(mood)
+    thought = f"  <  {text}..." if text else "  <"
     cat = rf"""   /\_/\
-  ( {face} )  <  {text}...
+  ( {face} ){thought}
    > ^ <"""
     print(cat)
 
