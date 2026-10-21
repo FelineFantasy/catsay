@@ -5,7 +5,7 @@ Catsay - ASCII cat with customizable moods and messages
 """
 
 # catsay.py
-__all__ = ["cat_say", "cat_warn", "cat_error", "cat_think", "cat_ask"]
+__all__ = ["say", "warn", "error", "think", "ask"]
 
 FACES = {
     "happy": "o.o",
@@ -22,7 +22,7 @@ def _get_face(mood: str) -> str:
     return FACES[mood]
 
 
-def cat_say(text: str = "", mood: str = "happy") -> None:
+def say(text: str = "", mood: str = "happy") -> None:
     """The cat says text with a given mood (happy/sleepy/angry/love)."""
     face = _get_face(mood)
 
@@ -34,7 +34,7 @@ def cat_say(text: str = "", mood: str = "happy") -> None:
     print(cat)
 
 
-def cat_warn(text: str = "") -> None:
+def warn(text: str = "") -> None:
     """The cat outputs a warning."""
     cat = rf"""   /\_/\
   ( -.o )  ~  {text} ~~~
@@ -42,12 +42,12 @@ def cat_warn(text: str = "") -> None:
     print(cat)
 
 
-def cat_error(text: str = "Error") -> None:
+def error(text: str = "Error") -> None:
     """The cat outputs an error message."""
-    cat_say(f"!!! {text} !!!", mood="angry")
+    say(f"!!! {text} !!!", mood="angry")
 
 
-def cat_think(text: str = "", mood: str = "happy") -> None:
+def think(text: str = "", mood: str = "happy") -> None:
     """The cat says text thoughtfully."""
     face = _get_face(mood)
     thought = f"  <  {text}..." if text else "  <"
@@ -57,35 +57,35 @@ def cat_think(text: str = "", mood: str = "happy") -> None:
     print(cat)
 
 
-def cat_ask(question: str = "") -> str:
+def ask(question: str = "") -> str:
     """The cat asks a question and returns the user's answer."""
-    cat_say(question, mood="love")
+    say(question, mood="love")
     return input("> ")
 
 
 if __name__ == "__main__":
-    print("=== cat_say() ===\n")
-    cat_say()
-    cat_say("Meow!", mood="happy")
-    cat_say("Zzz", mood="sleepy")
-    cat_say("meow :(", mood="angry")
-    cat_say("I love you!", mood="love")
+    print("=== say() ===\n")
+    say()
+    say("Meow!", mood="happy")
+    say("Zzz", mood="sleepy")
+    say("meow :(", mood="angry")
+    say("I love you!", mood="love")
 
-    print("\n=== cat_warn() ===\n")
-    cat_warn()
-    cat_warn("Where's my food!")
+    print("\n=== warn() ===\n")
+    warn()
+    warn("Where's my food!")
 
-    print("\n=== cat_error() ===\n")
-    cat_error()
-    cat_error("The cat has fallen!")
+    print("\n=== error() ===\n")
+    error()
+    error("The cat has fallen!")
 
-    print("\n=== cat_think() ===\n")
-    cat_think()
-    cat_think("Hmm", mood="happy")
-    cat_think("Hmm", mood="sleepy")
-    cat_think("Hmm", mood="angry")
-    cat_think("Hmm", mood="love")
+    print("\n=== think() ===\n")
+    think()
+    think("Hmm", mood="happy")
+    think("Hmm", mood="sleepy")
+    think("Hmm", mood="angry")
+    think("Hmm", mood="love")
 
-    print("\n=== cat_ask() ===\n")
-    cat_ask()
-    cat_ask("Where's my food?")
+    print("\n=== ask() ===\n")
+    ask()
+    ask("Where's my food?")
