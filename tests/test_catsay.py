@@ -47,7 +47,7 @@ class CatErrorTests(unittest.TestCase):
     def test_default_error(self):
         self.assertEqual(
             capture(catsay.error),
-            "   /\\_/\\\n  ( ò.ó )  >  !!! Error !!!\n   > ^ <\n",
+            "   /\\_/\\\n  ( >.< )  >  !!! Error !!!\n   > ^ <\n",
         )
 
     def test_custom_error(self):

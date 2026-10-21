@@ -44,6 +44,8 @@ cd catsay
 pip install .
 ```
 
+> **Note:** this package installs the top-level `catsay` module. If the unrelated [`catsay`](https://pypi.org/project/catsay/) distribution is installed, remove it first (`pip uninstall catsay`), otherwise it shadows this library.
+
 ## 🚀 Usage
 
 ### Basic
@@ -133,7 +135,7 @@ The cat outputs an error message (uses angry mood).
 ```python
 error("File not found!")
 #    /\_/\
-#   ( ò.ó )  >  !!! File not found! !!!
+#   ( >.< )  >  !!! File not found! !!!
 #    > ^ <
 ```
 
@@ -184,7 +186,7 @@ print(f"Hello, {name}!")
 |------|------|-------------|
 | `happy` | `o.o` | Default, friendly cat |
 | `sleepy` | `-.-` | Tired, drowsy cat |
-| `angry` | `ò.ó` | Angry, frustrated cat |
+| `angry` | `>.<` | Angry, frustrated cat |
 | `love` | `^.^` | Loving, affectionate cat |
 
 ## 🧪 Full Example

@@ -10,7 +10,7 @@ __all__ = ["say", "warn", "error", "think", "ask"]
 FACES = {
     "happy": "o.o",
     "sleepy": "-.-",
-    "angry": "ò.ó",
+    "angry": ">.<",
     "love": "^.^",
 }
 
