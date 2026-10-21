@@ -15,30 +15,30 @@ def capture(func, *args, **kwargs):
 
 class CatSayTests(unittest.TestCase):
     def test_default_cat(self):
-        self.assertEqual(capture(catsay.cat_say), "   /\\_/\\\n  ( o.o )\n   > ^ <\n")
+        self.assertEqual(capture(catsay.say), "   /\\_/\\\n  ( o.o )\n   > ^ <\n")
 
     def test_text_and_mood(self):
         self.assertEqual(
-            capture(catsay.cat_say, "Meow!", mood="sleepy"),
+            capture(catsay.say, "Meow!", mood="sleepy"),
             "   /\\_/\\\n  ( -.- )  >  Meow!\n   > ^ <\n",
         )
 
     def test_all_moods_render_their_face(self):
         for mood, face in catsay.FACES.items():
-            self.assertIn(f"( {face} )", capture(catsay.cat_say, "hi", mood=mood))
+            self.assertIn(f"( {face} )", capture(catsay.say, "hi", mood=mood))
 
     def test_unknown_mood_raises(self):
         with self.assertRaises(ValueError):
-            capture(catsay.cat_say, "hi", mood="grumpy")
+            capture(catsay.say, "hi", mood="grumpy")
 
 
 class CatWarnTests(unittest.TestCase):
     def test_empty_warning(self):
-        self.assertEqual(capture(catsay.cat_warn), "   /\\_/\\\n  ( -.o )  ~   ~~~\n   > ^ <\n")
+        self.assertEqual(capture(catsay.warn), "   /\\_/\\\n  ( -.o )  ~   ~~~\n   > ^ <\n")
 
     def test_warning_with_text(self):
         self.assertEqual(
-            capture(catsay.cat_warn, "Low disk space!"),
+            capture(catsay.warn, "Low disk space!"),
             "   /\\_/\\\n  ( -.o )  ~  Low disk space! ~~~\n   > ^ <\n",
         )
 
@@ -46,27 +46,27 @@ class CatWarnTests(unittest.TestCase):
 class CatErrorTests(unittest.TestCase):
     def test_default_error(self):
         self.assertEqual(
-            capture(catsay.cat_error),
+            capture(catsay.error),
             "   /\\_/\\\n  ( ò.ó )  >  !!! Error !!!\n   > ^ <\n",
         )
 
     def test_custom_error(self):
-        self.assertIn("!!! File not found! !!!", capture(catsay.cat_error, "File not found!"))
+        self.assertIn("!!! File not found! !!!", capture(catsay.error, "File not found!"))
 
 
 class CatThinkTests(unittest.TestCase):
     def test_empty_thought_has_no_ellipsis(self):
-        self.assertEqual(capture(catsay.cat_think), "   /\\_/\\\n  ( o.o )  <\n   > ^ <\n")
+        self.assertEqual(capture(catsay.think), "   /\\_/\\\n  ( o.o )  <\n   > ^ <\n")
 
     def test_thought_with_text(self):
         self.assertEqual(
-            capture(catsay.cat_think, "Hmm", mood="love"),
+            capture(catsay.think, "Hmm", mood="love"),
             "   /\\_/\\\n  ( ^.^ )  <  Hmm...\n   > ^ <\n",
         )
 
     def test_unknown_mood_raises(self):
         with self.assertRaises(ValueError):
-            capture(catsay.cat_think, "Hmm", mood="grumpy")
+            capture(catsay.think, "Hmm", mood="grumpy")
 
 
 class CatAskTests(unittest.TestCase):
@@ -74,7 +74,7 @@ class CatAskTests(unittest.TestCase):
         output = io.StringIO()
         with patch("builtins.input", return_value="fish") as mock_input:
             with redirect_stdout(output):
-                answer = catsay.cat_ask("What's for dinner?")
+                answer = catsay.ask("What's for dinner?")
         self.assertEqual(answer, "fish")
         self.assertIn("What's for dinner?", output.getvalue())
         mock_input.assert_called_once_with("> ")

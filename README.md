@@ -1,4 +1,4 @@
-# catsay 🐱 [![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+# catsay 🐱 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A cute ASCII cat library that says, warns, thinks, and asks questions. Perfect for making your CLI output more fun and expressive!
 
@@ -6,11 +6,11 @@ A cute ASCII cat library that says, warns, thinks, and asks questions. Perfect f
 
 **catsay** is a tiny Python library that renders an ASCII cat with messages. It provides several functions for different use cases:
 
-- 🗣️ `cat_say` — The cat says text with a given mood
-- ⚠️ `cat_warn` — The cat outputs a warning
-- ❌ `cat_error` — The cat shows an error message
-- 💭 `cat_think` — The cat thinks thoughtfully
-- ❓ `cat_ask` — The cat asks a question and returns the user's answer
+- 🗣️ `say` — The cat says text with a given mood
+- ⚠️ `warn` — The cat outputs a warning
+- ❌ `error` — The cat shows an error message
+- 💭 `think` — The cat thinks thoughtfully
+- ❓ `ask` — The cat asks a question and returns the user's answer
 
 ### Features:
 
@@ -18,11 +18,17 @@ A cute ASCII cat library that says, warns, thinks, and asks questions. Perfect f
 - 📦 **Zero dependencies** — Pure Python, no extra packages
 - 🔌 **Simple API** — 5 functions for all use cases
 - 🎨 **ASCII art** — No external images or assets needed
-- 💬 **Interactive** — `cat_ask()` reads user input
+- 💬 **Interactive** — `ask()` reads user input
 
 ## ⚙️ Installation
 
-### Option 1: Copy the file
+### Option 1: Install from PyPI
+
+```bash
+pip install catsay-py
+```
+
+### Option 2: Copy the file
 
 Just copy `catsay.py` into your project:
 
@@ -30,11 +36,12 @@ Just copy `catsay.py` into your project:
 # Place catsay.py in your project directory
 ```
 
-### Option 2: Install from Git
+### Option 3: Install from Git
 
 ```bash
 git clone https://github.com/FelineFantasy/catsay
 cd catsay
+pip install .
 ```
 
 ## 🚀 Usage
@@ -42,37 +49,37 @@ cd catsay
 ### Basic
 
 ```python
-from catsay import cat_say, cat_warn, cat_error, cat_think, cat_ask
+from catsay import say, warn, error, think, ask
 
-cat_say("Hello, World!")
-cat_warn("Don't forget to feed the cat!")
-cat_error("Something went wrong!")
-cat_think("Hmm, interesting...")
-answer = cat_ask("What's your name?")
+say("Hello, World!")
+warn("Don't forget to feed the cat!")
+error("Something went wrong!")
+think("Hmm, interesting...")
+answer = ask("What's your name?")
 print(f"User said: {answer}")
 ```
 
 ### Moods
 
 ```python
-cat_say("I'm happy!", mood="happy")
-cat_say("Zzz...", mood="sleepy")
-cat_say("I'm angry!", mood="angry")
-cat_say("I love you!", mood="love")
+say("I'm happy!", mood="happy")
+say("Zzz...", mood="sleepy")
+say("I'm angry!", mood="angry")
+say("I love you!", mood="love")
 ```
 
 ### Without text
 
 ```python
-cat_say()  # Just a cute cat
-cat_think()  # Thinking cat
-cat_warn()  # Warning cat
-cat_error()  # Error cat
+say()  # Just a cute cat
+think()  # Thinking cat
+warn()  # Warning cat
+error()  # Error cat
 ```
 
 ## 📖 API Reference
 
-### `cat_say(text: str = "", mood: str = "happy") -> None`
+### `say(text: str = "", mood: str = "happy") -> None`
 
 The cat says text with a given mood.
 
@@ -86,7 +93,7 @@ The cat says text with a given mood.
 **Example:**
 
 ```python
-cat_say("Meow!")
+say("Meow!")
 #    /\_/\
 #   ( o.o )  >  Meow!
 #    > ^ <
@@ -94,7 +101,7 @@ cat_say("Meow!")
 
 ---
 
-### `cat_warn(text: str = "") -> None`
+### `warn(text: str = "") -> None`
 
 The cat outputs a warning.
 
@@ -105,7 +112,7 @@ The cat outputs a warning.
 **Example:**
 
 ```python
-cat_warn("Low disk space!")
+warn("Low disk space!")
 #    /\_/\
 #   ( -.o )  ~  Low disk space! ~~~
 #    > ^ <
@@ -113,7 +120,7 @@ cat_warn("Low disk space!")
 
 ---
 
-### `cat_error(text: str = "Error") -> None`
+### `error(text: str = "Error") -> None`
 
 The cat outputs an error message (uses angry mood).
 
@@ -124,7 +131,7 @@ The cat outputs an error message (uses angry mood).
 **Example:**
 
 ```python
-cat_error("File not found!")
+error("File not found!")
 #    /\_/\
 #   ( ò.ó )  >  !!! File not found! !!!
 #    > ^ <
@@ -132,7 +139,7 @@ cat_error("File not found!")
 
 ---
 
-### `cat_think(text: str = "", mood: str = "happy") -> None`
+### `think(text: str = "", mood: str = "happy") -> None`
 
 The cat says text thoughtfully (with `<` bubble).
 
@@ -146,7 +153,7 @@ The cat says text thoughtfully (with `<` bubble).
 **Example:**
 
 ```python
-cat_think("Hmm, interesting...")
+think("Hmm, interesting...")
 #    /\_/\
 #   ( o.o )  <  Hmm, interesting...
 #    > ^ <
@@ -154,7 +161,7 @@ cat_think("Hmm, interesting...")
 
 ---
 
-### `cat_ask(question: str = "") -> str`
+### `ask(question: str = "") -> str`
 
 The cat asks a question and returns the user's answer.
 
@@ -167,7 +174,7 @@ The cat asks a question and returns the user's answer.
 **Example:**
 
 ```python
-name = cat_ask("What's your name?")
+name = ask("What's your name?")
 print(f"Hello, {name}!")
 ```
 
@@ -183,33 +190,33 @@ print(f"Hello, {name}!")
 ## 🧪 Full Example
 
 ```python
-from catsay import cat_say, cat_warn, cat_error, cat_think, cat_ask
+from catsay import say, warn, error, think, ask
 
-print("=== cat_say() ===\n")
-cat_say()
-cat_say("Meow!", mood="happy")
-cat_say("Zzz", mood="sleepy")
-cat_say("meow :(", mood="angry")
-cat_say("I love you!", mood="love")
+print("=== say() ===\n")
+say()
+say("Meow!", mood="happy")
+say("Zzz", mood="sleepy")
+say("meow :(", mood="angry")
+say("I love you!", mood="love")
 
-print("\n=== cat_warn() ===\n")
-cat_warn()
-cat_warn("Where's my food!")
+print("\n=== warn() ===\n")
+warn()
+warn("Where's my food!")
 
-print("\n=== cat_error() ===\n")
-cat_error()
-cat_error("The cat has fallen!")
+print("\n=== error() ===\n")
+error()
+error("The cat has fallen!")
 
-print("\n=== cat_think() ===\n")
-cat_think()
-cat_think("Hmm", mood="happy")
-cat_think("Hmm", mood="sleepy")
-cat_think("Hmm", mood="angry")
-cat_think("Hmm", mood="love")
+print("\n=== think() ===\n")
+think()
+think("Hmm", mood="happy")
+think("Hmm", mood="sleepy")
+think("Hmm", mood="angry")
+think("Hmm", mood="love")
 
-print("\n=== cat_ask() ===\n")
-cat_ask()
-cat_ask("Where's my food?")
+print("\n=== ask() ===\n")
+ask()
+ask("Where's my food?")
 ```
 
 ## 🧪 Testing
@@ -241,11 +248,11 @@ catsay/
 
 ## 🛠 Technologies
 
-- **Python 3.6+** — Pure standard library, no external dependencies
+- **Python 3.8+** — Pure standard library, no external dependencies
 
 ## 📋 Requirements
 
-- Python 3.6+
+- Python 3.8+
 - No external dependencies
 
 ## 💖 Support the Project
