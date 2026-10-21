@@ -15,12 +15,16 @@ FACES = {
 }
 
 
-def cat_say(text: str = "", mood: str = "happy") -> None:
-    """The cat says text with a given mood (happy/sleepy/angry/love)."""
+def _get_face(mood: str) -> str:
+    """Return the face for a mood, raising ValueError if it is unknown."""
     if mood not in FACES:
         raise ValueError(f"Unsupported mood: {mood}. Available: {list(FACES.keys())}")
+    return FACES[mood]
 
-    face = FACES[mood]
+
+def cat_say(text: str = "", mood: str = "happy") -> None:
+    """The cat says text with a given mood (happy/sleepy/angry/love)."""
+    face = _get_face(mood)
 
     cat = rf"""   /\_/\
   ( {face} )  >  {text}
@@ -45,10 +49,7 @@ def cat_error(text: str = "Error") -> None:
 
 def cat_think(text: str = "", mood: str = "happy") -> None:
     """The cat says text thoughtfully."""
-    if mood not in FACES:
-        raise ValueError(f"Unsupported mood: {mood}. Available: {list(FACES.keys())}")
-
-    face = FACES[mood]
+    face = _get_face(mood)
     cat = rf"""   /\_/\
   ( {face} )  <  {text}...
    > ^ <"""
