@@ -22,24 +22,23 @@ def _get_face(mood: str) -> str:
     return FACES[mood]
 
 
+def _cat(face: str, message: str = "") -> str:
+    """Return a three-line cat frame with an optional message beside the face."""
+    middle = f"  ( {face} )"
+    if message:
+        middle += f"  {message}"
+    return f"   /\\_/\\\n{middle}\n   > ^ <"
+
+
 def say(text: str = "", mood: str = "happy") -> None:
     """The cat says text with a given mood (happy/sleepy/angry/love)."""
     face = _get_face(mood)
-
-    cat = rf"""   /\_/\
-  ( {face} )  >  {text}
-   > ^ <""" if text else rf"""   /\_/\
-  ( {face} )
-   > ^ <"""
-    print(cat)
+    print(_cat(face, f">  {text}" if text else ""))
 
 
 def warn(text: str = "") -> None:
     """The cat outputs a warning."""
-    cat = rf"""   /\_/\
-  ( -.o )  ~  {text} ~~~
-   > ^ <"""
-    print(cat)
+    print(_cat("-.o", f"~  {text} ~~~"))
 
 
 def error(text: str = "Error") -> None:
@@ -50,11 +49,7 @@ def error(text: str = "Error") -> None:
 def think(text: str = "", mood: str = "happy") -> None:
     """The cat says text thoughtfully."""
     face = _get_face(mood)
-    thought = f"  <  {text}..." if text else "  <"
-    cat = rf"""   /\_/\
-  ( {face} ){thought}
-   > ^ <"""
-    print(cat)
+    print(_cat(face, f"<  {text}..." if text else "<"))
 
 
 def ask(question: str = "") -> str:
