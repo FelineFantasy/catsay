@@ -31,9 +31,17 @@ def _cat(face: str, message: str = "") -> str:
 
 
 def say(text: str = "", mood: str = "happy") -> None:
-    """The cat says text with a given mood (happy/sleepy/angry/love)."""
+    """The cat says text with a given mood (happy/sleepy/angry/love).
+
+    Multi-line text is aligned under the first message line.
+    """
     face = _get_face(mood)
-    print(_cat(face, f">  {text}" if text else ""))
+    if not text:
+        print(_cat(face))
+        return
+    indent = " " * len(f"  ( {face} )  >  ")
+    message = ">  " + f"\n{indent}".join(text.splitlines() or [text])
+    print(_cat(face, message))
 
 
 def warn(text: str = "") -> None:
