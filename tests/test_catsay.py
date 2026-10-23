@@ -31,6 +31,21 @@ class CatSayTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             capture(catsay.say, "hi", mood="grumpy")
 
+    def test_multi_line_text_is_aligned(self):
+        self.assertEqual(
+            capture(catsay.say, "first\nsecond"),
+            "   /\\_/\\\n"
+            "  ( o.o )  >  first\n"
+            "              second\n"
+            "   > ^ <\n",
+        )
+
+    def test_trailing_newline_does_not_add_blank_line(self):
+        self.assertEqual(
+            capture(catsay.say, "only\n"),
+            "   /\\_/\\\n  ( o.o )  >  only\n   > ^ <\n",
+        )
+
 
 class CatWarnTests(unittest.TestCase):
     def test_empty_warning(self):
@@ -67,6 +82,15 @@ class CatThinkTests(unittest.TestCase):
     def test_unknown_mood_raises(self):
         with self.assertRaises(ValueError):
             capture(catsay.think, "Hmm", mood="grumpy")
+
+    def test_multi_line_thought_is_aligned(self):
+        self.assertEqual(
+            capture(catsay.think, "line one\nline two", mood="love"),
+            "   /\\_/\\\n"
+            "  ( ^.^ )  <  line one\n"
+            "              line two...\n"
+            "   > ^ <\n",
+        )
 
 
 class CatAskTests(unittest.TestCase):
