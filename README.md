@@ -70,6 +70,21 @@ say("I'm angry!", mood="angry")
 say("I love you!", mood="love")
 ```
 
+### Multi-line messages
+
+`say()` and `think()` print every line of the text, aligned under the first one:
+
+```python
+say("Feeding time!\nWhere is my bowl?")
+```
+
+```text
+   /\_/\
+  ( o.o )  >  Feeding time!
+              Where is my bowl?
+   > ^ <
+```
+
 ### Without text
 
 ```python
@@ -83,7 +98,7 @@ error()  # Error cat
 
 ### `say(text: str = "", mood: str = "happy") -> None`
 
-The cat says text with a given mood.
+The cat says text with a given mood. Multi-line text is printed one line per row.
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -143,7 +158,7 @@ error("File not found!")
 
 ### `think(text: str = "", mood: str = "happy") -> None`
 
-The cat says text thoughtfully (with `<` bubble).
+The cat says text thoughtfully (with `<` bubble). Multi-line text is printed one line per row.
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
