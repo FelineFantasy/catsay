@@ -55,9 +55,17 @@ def error(text: str = "Error") -> None:
 
 
 def think(text: str = "", mood: str = "happy") -> None:
-    """The cat says text thoughtfully."""
+    """The cat says text thoughtfully.
+
+    Multi-line text is aligned under the first thought line.
+    """
     face = _get_face(mood)
-    print(_cat(face, f"<  {text}..." if text else "<"))
+    if not text:
+        print(_cat(face, "<"))
+        return
+    indent = " " * len(f"  ( {face} )  <  ")
+    message = "<  " + f"\n{indent}".join(text.splitlines() or [text]) + "..."
+    print(_cat(face, message))
 
 
 def ask(question: str = "") -> str:
